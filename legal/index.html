@@ -1,0 +1,546 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>UpBee — Legal</title>
+<meta name="robots" content="noindex">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --pink: #FF4081;
+    --pink-deep: #D42063;
+    --pink-soft: #FFE9F1;
+    --honey: #F5B800;
+    --honey-deep: #B87D1A;
+    --honey-soft: #FFF6DE;
+    --sky: #EAF3FB;
+    --sky-deep: #3B5978;
+    --ink: #1B1A1F;
+    --ink-soft: #6E6C78;
+    --ink-faint: #A6A4B0;
+    --bg: #FCFBFD;
+    --card: #FFFFFF;
+    --line: rgba(27, 26, 31, 0.08);
+    --shadow: 0 10px 30px -14px rgba(27, 26, 31, 0.16);
+    --maxw: 800px;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--bg);
+    color: var(--ink);
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    font-size: 15.5px;
+    line-height: 1.65;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  a { color: var(--pink-deep); text-decoration: none; font-weight: 600; }
+  a:hover { text-decoration: underline; }
+
+  .wrap { max-width: var(--maxw); margin: 0 auto; padding: 0 20px; }
+
+  /* ---------- top bar ---------- */
+  .topbar {
+    position: sticky;
+    top: 0;
+    z-index: 20;
+    background: rgba(252, 251, 253, 0.85);
+    backdrop-filter: blur(14px);
+    border-bottom: 1px solid var(--line);
+  }
+
+  .topbar-inner {
+    max-width: var(--maxw);
+    margin: 0 auto;
+    padding: 14px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    flex-wrap: wrap;
+  }
+
+  .brand {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-weight: 800;
+    font-size: 17px;
+    letter-spacing: -0.01em;
+    color: var(--ink);
+  }
+
+  .brand svg { width: 24px; height: 24px; }
+
+  .pill-nav {
+    display: flex;
+    gap: 6px;
+    background: var(--pink-soft);
+    padding: 4px;
+    border-radius: 999px;
+  }
+
+  .pill-nav a {
+    font-size: 12.5px;
+    font-weight: 600;
+    color: var(--pink-deep);
+    padding: 7px 14px;
+    border-radius: 999px;
+    transition: background 0.15s ease, color 0.15s ease;
+  }
+
+  .pill-nav a:hover {
+    background: var(--pink);
+    color: #fff;
+    text-decoration: none;
+  }
+
+  /* ---------- hero ---------- */
+  .hero {
+    padding: 56px 0 8px;
+  }
+
+  .hero h1 {
+    font-size: clamp(34px, 6vw, 48px);
+    font-weight: 800;
+    letter-spacing: -0.03em;
+    line-height: 1.05;
+    margin-bottom: 14px;
+  }
+
+  .hero h1 span { color: var(--pink); }
+
+  .hero p {
+    color: var(--ink-soft);
+    font-size: 16px;
+    max-width: 520px;
+    margin-bottom: 18px;
+  }
+
+  .updated-pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    background: var(--honey-soft);
+    color: var(--honey-deep);
+    font-size: 12.5px;
+    font-weight: 700;
+    padding: 6px 14px;
+    border-radius: 999px;
+  }
+
+  /* ---------- doc cards ---------- */
+  .doc {
+    padding: 40px 0;
+    scroll-margin-top: 90px;
+  }
+
+  .doc-card {
+    background: var(--card);
+    border-radius: 28px;
+    box-shadow: var(--shadow);
+    padding: 40px 36px;
+  }
+
+  .doc-eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    background: var(--pink-soft);
+    color: var(--pink-deep);
+    font-size: 11.5px;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    padding: 5px 12px;
+    border-radius: 999px;
+    margin-bottom: 16px;
+  }
+
+  .doc h2.doc-title {
+    font-size: clamp(26px, 4vw, 32px);
+    font-weight: 800;
+    letter-spacing: -0.02em;
+    margin-bottom: 26px;
+  }
+
+  .doc h3 {
+    font-size: 18px;
+    font-weight: 700;
+    letter-spacing: -0.01em;
+    margin: 30px 0 10px;
+    display: flex;
+    align-items: center;
+    gap: 9px;
+  }
+
+  .doc h3::before {
+    content: '';
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: var(--pink);
+    flex-shrink: 0;
+  }
+
+  .doc h3:first-of-type { margin-top: 0; }
+
+  .doc p { margin-bottom: 14px; color: var(--ink); }
+  .doc p.soft { color: var(--ink-soft); font-size: 14.5px; }
+
+  .doc ul, .doc ol { margin: 0 0 14px 20px; }
+  .doc li { margin-bottom: 7px; }
+
+  .box {
+    background: var(--sky);
+    border-radius: 18px;
+    padding: 18px 20px;
+    margin: 16px 0;
+    font-size: 14.5px;
+    line-height: 1.7;
+  }
+
+  .box.pink { background: var(--pink-soft); }
+  .box.honey { background: var(--honey-soft); }
+
+  .box .box-label {
+    display: block;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    color: var(--sky-deep);
+    margin-bottom: 8px;
+  }
+
+  .box.pink .box-label { color: var(--pink-deep); }
+  .box.honey .box-label { color: var(--honey-deep); }
+
+  table.data-table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+    margin: 14px 0 22px;
+    font-size: 13.5px;
+    border-radius: 14px;
+    overflow: hidden;
+    border: 1px solid var(--line);
+  }
+
+  table.data-table th {
+    background: var(--pink-soft);
+    color: var(--pink-deep);
+    font-weight: 700;
+    font-size: 11.5px;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    text-align: left;
+    padding: 11px 14px;
+  }
+
+  table.data-table td {
+    padding: 12px 14px;
+    border-top: 1px solid var(--line);
+    vertical-align: top;
+  }
+
+  table.data-table tr:nth-child(even) td { background: #FDFBFC; }
+
+  .imprint-block {
+    font-size: 15px;
+    line-height: 1.85;
+  }
+
+  .imprint-block .term {
+    font-weight: 600;
+    color: var(--ink-soft);
+    font-size: 12.5px;
+  }
+
+  /* ---------- footer ---------- */
+  footer {
+    padding: 40px 0 56px;
+    text-align: center;
+  }
+
+  footer p {
+    font-size: 12.5px;
+    color: var(--ink-faint);
+  }
+
+  @media (max-width: 640px) {
+    .wrap, .topbar-inner { padding: 0 16px; }
+    .doc-card { padding: 30px 22px; border-radius: 22px; }
+    .pill-nav { width: 100%; justify-content: space-between; }
+    .pill-nav a { flex: 1; text-align: center; padding: 7px 8px; }
+  }
+</style>
+</head>
+<body>
+
+<div class="topbar">
+  <div class="topbar-inner">
+    <a href="#top" class="brand">
+      <svg viewBox="0 0 44 34" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <defs><clipPath id="navBeeClip"><ellipse cx="24" cy="20" rx="13" ry="9.5"/></clipPath></defs>
+        <ellipse cx="15" cy="11" rx="8.5" ry="5.5" fill="#FCFBFD" opacity="0.9"/>
+        <ellipse cx="30" cy="11" rx="8.5" ry="5.5" fill="#FCFBFD" opacity="0.9"/>
+        <ellipse cx="24" cy="20" rx="13" ry="9.5" fill="#F5B800"/>
+        <g clip-path="url(#navBeeClip)">
+          <rect x="12" y="10" width="5.5" height="20" fill="#1B1A1F"/>
+          <rect x="23" y="10" width="5.5" height="20" fill="#1B1A1F"/>
+        </g>
+        <circle cx="11" cy="20" r="5.2" fill="#1B1A1F"/>
+      </svg>
+      UpBee
+    </a>
+    <nav class="pill-nav">
+      <a href="#privacy">Privacy</a>
+      <a href="#terms">Terms</a>
+      <a href="#impressum">Impressum</a>
+    </nav>
+  </div>
+</div>
+
+<div class="wrap">
+  <header class="hero" id="top">
+    <h1>Legal, made <span>readable.</span></h1>
+    <p>Privacy Policy, Terms of Service, and Impressum for UpBee — developed and operated by Hakan Özdemir.</p>
+    <span class="updated-pill">🕐 Last updated: August 2026</span>
+  </header>
+</div>
+
+<!-- ============================================================ -->
+<!-- PRIVACY POLICY                                                -->
+<!-- ============================================================ -->
+<section class="doc" id="privacy">
+  <div class="wrap">
+    <div class="doc-card">
+      <span class="doc-eyebrow">Document 1 of 3</span>
+      <h2 class="doc-title">Privacy Policy</h2>
+
+      <p>This Privacy Policy explains what information UpBee ("the App", "we", "us") collects, how it is used, and what choices you have. UpBee is designed to work primarily on your device, with an optional account for backup and syncing across devices. This policy applies to users of UpBee worldwide.</p>
+
+      <h3>Who is responsible for your data</h3>
+      <div class="box pink">
+        <span class="box-label">Data controller</span>
+        Hakan Özdemir · Ellernbuschfeld 38 · 30539 Hannover, Germany<br>
+        Email: <a href="mailto:hello@upbee.app">hello@upbee.app</a>
+      </div>
+
+      <h3>What information we collect</h3>
+      <p>UpBee stores most of your activity locally on your device by default. If you create an account, a copy of the following categories may also be securely stored in our cloud database so it can sync across your devices:</p>
+
+      <table class="data-table">
+        <thead>
+          <tr><th>Category</th><th>Examples</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Account information</td><td>Email address, display name, avatar, a friend code used to connect with others</td></tr>
+          <tr><td>Demographic information</td><td>Age range and sex/gender, collected during onboarding to personalize habit suggestions and content</td></tr>
+          <tr><td>Habit &amp; task data</td><td>Habits, to-dos, schedules, completion history</td></tr>
+          <tr><td>Goals</td><td>Goals you set and the habits linked to them</td></tr>
+          <tr><td>Diary &amp; mood entries</td><td>Personal journal text and mood selections — private to you, never shared with other users</td></tr>
+          <tr><td>Streak &amp; progress data</td><td>Streak counts, milestones, and related progress indicators</td></tr>
+          <tr><td>Social &amp; sharing data</td><td>Friend connections you approve, and details of tasks or goals you choose to share with friends</td></tr>
+          <tr><td>Preferences</td><td>App theme, notification settings, and similar configuration choices</td></tr>
+        </tbody>
+      </table>
+
+      <p class="soft">We do not access your camera, contacts, or precise location. The only device permission beyond notifications is optional access to your photo library, requested only when you choose to save a shareable achievement image.</p>
+      <p class="soft">Age range and gender are used only to tailor the App's suggestions to you — they are never shown to other users and are not used for advertising, since we do not currently run any ads.</p>
+
+      <h3>What is visible to other users</h3>
+      <p>UpBee includes optional social features. If you add friends or share a task or goal with them, the following becomes visible to those specific people:</p>
+      <ul>
+        <li>Your display name, avatar, and friend code</li>
+        <li>Progress on tasks or goals you have explicitly chosen to share</li>
+        <li>Streak milestones, if you have friends connected</li>
+      </ul>
+      <p>Your diary and mood entries are never visible to other users, under any circumstance.</p>
+
+      <h3>Why we process your data</h3>
+      <p>We process your data on the following legal bases (Art. 6 GDPR):</p>
+      <ul>
+        <li><strong>Performance of a contract</strong> — to provide the core functionality of the App you have requested</li>
+        <li><strong>Consent</strong> — for optional features such as push notifications, which you can withdraw at any time in Settings</li>
+        <li><strong>Legitimate interest</strong> — to maintain the security, stability, and reliability of the service</li>
+        <li><strong>Legal obligation</strong> — where applicable, e.g. for tax and business record-keeping</li>
+      </ul>
+
+      <h3>Who else processes your data</h3>
+      <p>We use a small number of trusted service providers to operate UpBee. We do not sell your data, and we do not currently use any advertising or analytics services.</p>
+      <table class="data-table">
+        <thead>
+          <tr><th>Provider</th><th>Purpose</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Supabase</td><td>Database hosting and account authentication, hosted within the European Union</td></tr>
+          <tr><td>Expo</td><td>Technical infrastructure for the app itself and for scheduling local device notifications</td></tr>
+          <tr><td>Google / Apple</td><td>Only if you choose to sign in with a Google or Apple account — governed additionally by their own privacy policies</td></tr>
+        </tbody>
+      </table>
+      <p class="soft">Where a service provider processes data outside the EU/EEA, we rely on appropriate legal safeguards such as the EU Standard Contractual Clauses.</p>
+
+      <div class="box honey">
+        <span class="box-label">Looking ahead</span>
+        We do not currently use advertising or analytics SDKs. If this changes in the future — for example, to support a free tier of the App — we will update this Privacy Policy in advance and highlight the change within the App.
+      </div>
+
+      <h3>How long we keep your data</h3>
+      <p>Your data is kept for as long as you maintain an account. If you delete your account, your personal data is removed from our active systems; residual copies may remain in encrypted backups for a limited period of typically up to 30 days before being permanently purged.</p>
+
+      <h3>Your rights</h3>
+      <p>Under the GDPR, you have the right to:</p>
+      <ul>
+        <li>Access the personal data we hold about you</li>
+        <li>Correct inaccurate data</li>
+        <li>Request deletion of your data ("right to be forgotten")</li>
+        <li>Export a copy of your data — available directly in the App via Settings → Export my data</li>
+        <li>Object to or restrict certain processing</li>
+        <li>Withdraw consent at any time, without affecting prior processing</li>
+        <li>Lodge a complaint with a data protection supervisory authority — for Lower Saxony, this is the <a href="https://lfd.niedersachsen.de" target="_blank" rel="noopener">Landesbeauftragte für den Datenschutz Niedersachsen</a></li>
+      </ul>
+      <p>You can exercise most of these rights directly within the App (Settings → Account, Export, or Delete account), or by contacting us at <a href="mailto:hello@upbee.app">hello@upbee.app</a>.</p>
+
+      <h3>International users</h3>
+      <p>UpBee is available to users around the world. This policy is built around the EU General Data Protection Regulation (GDPR) as our baseline standard, because it is one of the most protective privacy frameworks available. Regardless of where you live, we apply the same core protections described in this policy — including access, correction, deletion, and export of your data.</p>
+      <p class="soft">If your country of residence provides additional or different rights under its own privacy laws, those rights apply to you as well, to the extent required by local law.</p>
+
+      <h3>Children</h3>
+      <p>UpBee is not directed at children. As a general, worldwide baseline, we ask that users under the age of 16 only use the App with the involvement and consent of a parent or legal guardian — even where local law permits a lower age of consent. If we become aware that we have collected personal data from a child without appropriate consent, we will delete it promptly.</p>
+
+      <h3>Security</h3>
+      <p>We apply reasonable technical and organizational measures to protect your data, including encrypted storage and transmission, and access controls that restrict data to the account it belongs to. No method of transmission or storage is completely secure, and we cannot guarantee absolute security.</p>
+
+      <h3>Changes to this policy</h3>
+      <p>We may update this Privacy Policy from time to time, for example to reflect new features. Material changes will be announced within the App. Continued use of UpBee after an update constitutes acceptance of the revised policy.</p>
+
+      <h3>Contact</h3>
+      <p>Questions about this policy or your data can be sent to <a href="mailto:hello@upbee.app">hello@upbee.app</a>.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================ -->
+<!-- TERMS OF SERVICE                                              -->
+<!-- ============================================================ -->
+<section class="doc" id="terms">
+  <div class="wrap">
+    <div class="doc-card">
+      <span class="doc-eyebrow">Document 2 of 3</span>
+      <h2 class="doc-title">Terms of Service</h2>
+
+      <p>These Terms govern your use of UpBee. By creating an account or using the App, you agree to these Terms. If you do not agree, please do not use the App.</p>
+
+      <h3>The service</h3>
+      <p>UpBee is a personal habit, goal, and journaling application. Its features, including any social or sharing functionality, are provided on an ongoing basis but may change, be added, or be discontinued at our discretion.</p>
+
+      <h3>Eligibility</h3>
+      <p>UpBee is intended for a general audience. We ask that users under the age of 16 only use the App with the involvement of a parent or legal guardian, in line with our Privacy Policy.</p>
+
+      <h3>Your account</h3>
+      <p>You are responsible for maintaining the confidentiality of your login credentials and for all activity under your account. Please notify us promptly at <a href="mailto:hello@upbee.app">hello@upbee.app</a> if you suspect unauthorized use of your account.</p>
+
+      <h3>Your content</h3>
+      <p>You retain ownership of the habits, goals, diary entries, and other content you create in UpBee ("Your Content"). By using the App, you grant us a limited license to store, process, and display Your Content back to you, and — only where you explicitly choose to share it — to the friends you select.</p>
+      <p class="soft">We do not read, review, or use your diary or private content for any purpose other than providing the App's functionality to you.</p>
+
+      <h3>Acceptable use</h3>
+      <p>You agree not to:</p>
+      <ul>
+        <li>Use the App for any unlawful purpose</li>
+        <li>Attempt to gain unauthorized access to other accounts or our systems</li>
+        <li>Reverse-engineer, decompile, or scrape the App beyond what is permitted by law</li>
+        <li>Use the social or sharing features to harass, abuse, or impersonate others</li>
+      </ul>
+
+      <h3>Free features and future paid features</h3>
+      <p>UpBee is currently free to use. We may introduce optional paid features or subscriptions in the future. If we do, additional terms specific to billing, renewal, and cancellation will be presented to you at the time of purchase, and will supplement — not replace — these Terms.</p>
+
+      <h3>No professional advice</h3>
+      <p>UpBee is a personal productivity and journaling tool. It is not a medical, psychological, or therapeutic product, and nothing in the App constitutes medical or mental health advice. If you are experiencing a health concern, please consult a qualified professional.</p>
+
+      <h3>Disclaimer of warranties</h3>
+      <p>The App is provided "as is" and "as available," without warranties of any kind, express or implied, to the fullest extent permitted by applicable law. We do not guarantee that the App will be uninterrupted, error-free, or that it will meet your specific expectations.</p>
+
+      <h3>Limitation of liability</h3>
+      <p>To the extent permitted by law, we are not liable for indirect, incidental, or consequential damages arising from your use of the App. Nothing in these Terms limits liability for intent, gross negligence, or injury to life, body, or health, where such limitation would not be permitted under German law.</p>
+
+      <h3>Termination</h3>
+      <p>You may stop using UpBee and delete your account at any time via Settings → Delete account. We may suspend or terminate accounts that violate these Terms.</p>
+
+      <h3>Governing law</h3>
+      <p>These Terms are governed by the laws of the Federal Republic of Germany, without regard to conflict-of-law principles. If you are a consumer resident elsewhere — inside or outside the EU — mandatory consumer-protection provisions of your country of residence remain unaffected, to the extent required by local law.</p>
+
+      <h3>Dispute resolution</h3>
+      <p>The European Commission provides a platform for online dispute resolution (ODR), available at <a href="https://ec.europa.eu/consumers/odr/" target="_blank" rel="noopener">ec.europa.eu/consumers/odr</a>. We are not obligated, and do not currently participate, in dispute resolution proceedings before a consumer arbitration board.</p>
+
+      <h3>Changes to these Terms</h3>
+      <p>We may update these Terms from time to time. Material changes will be announced within the App. Continued use after an update constitutes acceptance of the revised Terms.</p>
+
+      <h3>Contact</h3>
+      <p>Questions about these Terms can be sent to <a href="mailto:hello@upbee.app">hello@upbee.app</a>.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================ -->
+<!-- IMPRESSUM                                                     -->
+<!-- ============================================================ -->
+<section class="doc" id="impressum">
+  <div class="wrap">
+    <div class="doc-card">
+      <span class="doc-eyebrow">Document 3 of 3</span>
+      <h2 class="doc-title">Impressum</h2>
+      <p class="soft">German law requires this notice to identify the person responsible for this website and app, since the business behind UpBee is based in Germany. It's shown here in English for clarity, with the specific German legal terms kept intact where they don't translate one-to-one. This notice is a formality tied to where the business is registered — it does not limit the worldwide scope of the Privacy Policy and Terms of Service above.</p>
+
+      <h3>Provider information <span class="imprint-block term">(§ 5 TMG)</span></h3>
+      <div class="box pink imprint-block">
+        Hakan Özdemir<br>
+        Sole proprietorship <span class="term">(Einzelunternehmen)</span><br>
+        Ellernbuschfeld 38<br>
+        30539 Hannover, Germany
+      </div>
+
+      <h3>Contact</h3>
+      <div class="imprint-block">
+        Email: <a href="mailto:hello@upbee.app">hello@upbee.app</a><br>
+        Phone: +49 179 5126896
+      </div>
+
+      <h3>VAT</h3>
+      <p>VAT identification number: to be added once assigned.</p>
+
+      <h3>Person responsible for content <span class="imprint-block term">(§ 18 Abs. 2 MStV)</span></h3>
+      <p>Hakan Özdemir, address as above.</p>
+
+      <h3>EU dispute resolution</h3>
+      <p>The European Commission provides a platform for online dispute resolution (OS), available at <a href="https://ec.europa.eu/consumers/odr/" target="_blank" rel="noopener">ec.europa.eu/consumers/odr</a>. We are not obligated, and do not currently participate, in dispute resolution proceedings before a consumer arbitration board.</p>
+
+      <h3>Liability for content</h3>
+      <p class="soft">As a service provider, we are responsible for our own content on these pages under general law <span class="term">(§ 7 Abs. 1 TMG)</span>. We are not obligated to monitor third-party information we transmit or store, or to investigate circumstances suggesting illegal activity <span class="term">(§§ 8–10 TMG)</span>.</p>
+
+      <h3>Liability for links</h3>
+      <p class="soft">This site may contain links to external third-party websites over whose content we have no control. We cannot accept liability for this external content — the respective provider or operator of the linked page is always responsible for its content.</p>
+
+      <h3>Copyright</h3>
+      <p class="soft">Content and works created by the site operator on these pages are subject to German copyright law. Third-party contributions are marked as such.</p>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <p>UpBee — part of the Innovatiorum portfolio · © 2026 Hakan Özdemir</p>
+  </div>
+</footer>
+
+</body>
+</html>
