@@ -465,6 +465,11 @@
     if (!f.partner_type.value) return show('err', 'Please tell us what kind of partner you are.');
     if (!f.consent.checked) return show('err', 'Please tick the consent box so we may contact you.');
 
+    var website = f.website.value.trim() || '';
+    var partnerType = f.partner_type.value;
+    var audienceSize = f.audience_size.value || '';
+    var message = f.message.value.trim() || '';
+
     btn.disabled = true;
     try {
       var res = await fetch(SUPABASE_URL + '/rest/v1/partner_requests', {
@@ -478,15 +483,38 @@
         body: JSON.stringify({
           name: name,
           email: email,
-          website: f.website.value.trim() || null,
-          partner_type: f.partner_type.value,
-          audience_size: f.audience_size.value || null,
-          message: f.message.value.trim() || null,
+          website: website || null,
+          partner_type: partnerType,
+          audience_size: audienceSize || null,
+          message: message || null,
           consent_at: new Date().toISOString()
         })
       });
 
       if (res.ok || res.status === 409) {            // 409 = this email already applied
+        // Notify hello@upbee.app (FormSubmit). First use: confirm the activation email in that inbox.
+        if (res.ok) {
+          try {
+            await fetch('https://formsubmit.co/ajax/hello@upbee.app', {
+              method: 'POST',
+              headers: {
+                'Content-Type': 'application/json',
+                'Accept': 'application/json'
+              },
+              body: JSON.stringify({
+                _subject: 'New UpBee partner application',
+                _template: 'table',
+                _replyto: email,
+                Name: name,
+                Email: email,
+                Type: partnerType,
+                Audience: audienceSize || '—',
+                Website: website || '—',
+                Message: message || '—'
+              })
+            });
+          } catch (_) { /* inbox notify is best-effort; row is already saved */ }
+        }
         form.reset();
         show('ok', 'Thank you! We received your application and will reply to ' + email + ' soon.');
       } else {
