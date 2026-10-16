@@ -5,6 +5,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>UpBee — Legal</title>
 <meta name="robots" content="noindex">
+<link rel="icon" type="image/png" href="logo.png">
+<link rel="apple-touch-icon" href="logo.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -76,7 +78,13 @@
     color: var(--ink);
   }
 
-  .brand svg { width: 24px; height: 24px; }
+  .brand img {
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    object-fit: cover;
+    display: block;
+  }
 
   .pill-nav {
     display: flex;
@@ -287,17 +295,7 @@
 <div class="topbar">
   <div class="topbar-inner">
     <a href="#top" class="brand">
-      <svg viewBox="0 0 44 34" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-        <defs><clipPath id="navBeeClip"><ellipse cx="24" cy="20" rx="13" ry="9.5"/></clipPath></defs>
-        <ellipse cx="15" cy="11" rx="8.5" ry="5.5" fill="#FCFBFD" opacity="0.9"/>
-        <ellipse cx="30" cy="11" rx="8.5" ry="5.5" fill="#FCFBFD" opacity="0.9"/>
-        <ellipse cx="24" cy="20" rx="13" ry="9.5" fill="#F5B800"/>
-        <g clip-path="url(#navBeeClip)">
-          <rect x="12" y="10" width="5.5" height="20" fill="#1B1A1F"/>
-          <rect x="23" y="10" width="5.5" height="20" fill="#1B1A1F"/>
-        </g>
-        <circle cx="11" cy="20" r="5.2" fill="#1B1A1F"/>
-      </svg>
+      <img src="logo.png" alt="" width="28" height="28">
       UpBee
     </a>
     <nav class="pill-nav">
