@@ -492,28 +492,26 @@
       });
 
       if (res.ok || res.status === 409) {            // 409 = this email already applied
-        // Notify hello@upbee.app (FormSubmit). First use: confirm the activation email in that inbox.
+        // Inbox notify via Supabase Edge Function → Resend (best-effort; row is already saved).
         if (res.ok) {
           try {
-            await fetch('https://formsubmit.co/ajax/hello@upbee.app', {
+            await fetch(SUPABASE_URL + '/functions/v1/notify-partner-request', {
               method: 'POST',
               headers: {
                 'Content-Type': 'application/json',
-                'Accept': 'application/json'
+                'apikey': SUPABASE_ANON_KEY,
+                'Authorization': 'Bearer ' + SUPABASE_ANON_KEY
               },
               body: JSON.stringify({
-                _subject: 'New UpBee partner application',
-                _template: 'table',
-                _replyto: email,
-                Name: name,
-                Email: email,
-                Type: partnerType,
-                Audience: audienceSize || '—',
-                Website: website || '—',
-                Message: message || '—'
+                name: name,
+                email: email,
+                website: website || null,
+                partner_type: partnerType,
+                audience_size: audienceSize || null,
+                message: message || null
               })
             });
-          } catch (_) { /* inbox notify is best-effort; row is already saved */ }
+          } catch (_) { /* ignore */ }
         }
         form.reset();
         show('ok', 'Thank you! We received your application and will reply to ' + email + ' soon.');
