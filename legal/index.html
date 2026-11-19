@@ -313,7 +313,7 @@
   <header class="hero" id="top">
     <h1>Legal, made <span>readable.</span></h1>
     <p>Privacy Policy, Terms of Service, and Impressum for UpBee — developed and operated by Hakan Özdemir.</p>
-    <span class="updated-pill">🕐 Last updated: 15 November 2026</span>
+    <span class="updated-pill">🕐 Last updated: 19 November 2026</span>
   </header>
 </div>
 
@@ -343,13 +343,14 @@
           <tr><th>Category</th><th>Examples</th></tr>
         </thead>
         <tbody>
-          <tr><td>Account information</td><td>Email address, display name, avatar, a friend code used to connect with others</td></tr>
-          <tr><td>Activity posts</td><td>Captions and media you choose to post — up to 10 photos or short videos per post — shared with friends, or publicly if you mark the post public</td></tr>
-          <tr><td>Habit &amp; task data</td><td>Habits, to-dos, schedules, completion history</td></tr>
+          <tr><td>Account information</td><td>Email address, display name, avatar, and a friend code. A profile starts private. If you turn a public profile on, you can add a short bio and a public link</td></tr>
+          <tr><td>Activity posts</td><td>Captions and media you choose to post — up to 10 photos or short videos per post — shared with friends, or publicly if you mark the post public. Photos and videos are stored with your account and shown only to that audience</td></tr>
+          <tr><td>Habit &amp; task data</td><td>Habits, to-dos, schedules, completion history, and the day plan you build. These stay private</td></tr>
           <tr><td>Goals</td><td>Goals you set and the habits linked to them</td></tr>
           <tr><td>Diary &amp; mood entries</td><td>Personal journal text and mood selections — private to you, never shared with other users</td></tr>
           <tr><td>Streak &amp; progress data</td><td>Streak counts, milestones, and related progress indicators</td></tr>
-          <tr><td>Social &amp; sharing data</td><td>Friend connections you approve, and details of tasks or goals you choose to share with friends</td></tr>
+          <tr><td>Social &amp; sharing data</td><td>Friend requests you send or accept, public profiles you follow, likes and short comments on shared posts, cheers, and collections of posts you save. Saved collections stay private to you</td></tr>
+          <tr><td>Notifications</td><td>If you allow notifications while signed in: a push token for this device, and the time you last opened the app. Reminders that stay on the phone are not uploaded</td></tr>
           <tr><td>Preferences</td><td>App theme, notification settings, and similar configuration choices</td></tr>
         </tbody>
       </table>
@@ -358,17 +359,21 @@
       <p class="soft">Camera and photo library access are optional and only requested when you use them:</p>
       <ul>
         <li><strong>Camera</strong> — to take a photo or record a short video for an activity post</li>
+        <li><strong>Microphone</strong> — only while you record a video for an activity post</li>
         <li><strong>Photo library</strong> — to attach photos or short videos to an activity post (up to 10 per post), and, if you choose, to save a shareable win image</li>
       </ul>
 
       <h3>What is visible to other users</h3>
       <p>UpBee includes optional social features. What other people can see depends on what you choose to share:</p>
       <ul>
-        <li>Your display name, avatar, and friend code</li>
+        <li>Your display name, avatar, and friend code, to people who can view your profile</li>
+        <li>If you turn a public profile on: your name, avatar, bio, and friend code. Habits, diary, mood, and your day plan are never part of a public profile</li>
         <li>Progress on tasks or goals you have explicitly chosen to share</li>
         <li>Activity posts you publish, including captions and up to 10 photos or short videos, to the audience you pick (friends, or public)</li>
+        <li>Likes, short comments, and cheers on a post the other person can already see</li>
         <li>Streak milestones, if you choose to share them</li>
       </ul>
+      <p>Friends are mutual: both people accept. You can also follow a public profile without becoming friends. Following lets you see wins that person marked public. It does not share your habits, diary, mood, or day plan.</p>
       <p>You decide what to share, and you are responsible for it. That includes captions, photos, videos, and anything else you post to friends or publicly. Share only what you have the right to share, and only what you are comfortable with those people seeing.</p>
       <p>Anyone who can see a shared post can report it for a scam, spam, harassment, or another problem. We store the report, the reason, an optional note, and a short excerpt of the post so we can review it. Reports are not shown to other users.</p>
 
@@ -376,7 +381,7 @@
       <p>We process your data on the following legal bases (Art. 6 GDPR):</p>
       <ul>
         <li><strong>Performance of a contract</strong> — to provide the core functionality of the App you have requested</li>
-        <li><strong>Consent</strong> — for optional features such as push notifications, camera, and photo library access, which you can withdraw in your device settings, and for personalized advertising where consent is required</li>
+        <li><strong>Consent</strong> — for optional features such as push notifications, camera, microphone, and photo library access, which you can withdraw in your device settings, and for advertising where consent is required</li>
         <li><strong>Legitimate interest</strong> — to maintain the security, stability, and reliability of the service</li>
         <li><strong>Legal obligation</strong> — where applicable, e.g. for tax and business record-keeping</li>
       </ul>
@@ -389,7 +394,7 @@
         </thead>
         <tbody>
           <tr><td>Supabase</td><td>Database hosting and account authentication, hosted within the European Union</td></tr>
-          <tr><td>Expo</td><td>Technical infrastructure for the app itself and for scheduling local device notifications</td></tr>
+          <tr><td>Expo</td><td>App infrastructure, on-device notification scheduling, and — if you allow notifications while signed in — delivery of remote notifications such as a friend cheer. Expo receives the push token needed to deliver those messages. See <a href="https://expo.dev/privacy" target="_blank" rel="noopener">Expo's Privacy Policy</a></td></tr>
           <tr><td>Google AdMob</td><td>Native ads in the Activity feed. Google may process an advertising identifier, IP address, device information, and ad interactions to deliver and measure ads. See <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Google's Privacy Policy</a></td></tr>
           <tr><td>Google / Apple</td><td>Only if you choose to sign in with a Google or Apple account — governed additionally by their own privacy policies</td></tr>
         </tbody>
@@ -398,7 +403,7 @@
 
       <div class="box honey">
         <span class="box-label">Advertising</span>
-        The Activity feed can show native ads from Google AdMob. Each ad is labeled Sponsored. We do not use your habits, journal, mood, day plan, or activity posts to choose those ads. Where the law requires a choice about personalized ads, that choice is handled through your device settings and Google's ad controls. You can limit ad personalization in your phone's privacy settings.
+        Signed-in users can see native ads from Google AdMob in the Activity feed on the phone app. Each ad is labeled Sponsored. Before those ads are requested, Google's consent form asks what Google may use. Until you allow personalized ads, requests are non-personalized. You can change that later in Settings → Ad privacy choices. We do not use your habits, journal, mood, day plan, or activity posts to choose ads.
       </div>
 
       <h3>How long we keep your data</h3>
@@ -457,7 +462,7 @@
       <p>You are responsible for maintaining the confidentiality of your login credentials and for all activity under your account. Please notify us promptly at <a href="mailto:hello@upbee.app">hello@upbee.app</a> if you suspect unauthorized use of your account.</p>
 
       <h3>Your content</h3>
-      <p>You retain ownership of the habits, goals, diary entries, activity posts, and other content you create in UpBee ("Your Content"). By using the App, you grant us a limited license to store, process, and display Your Content back to you, and — only where you explicitly choose to share it — to the friends or public audience you select.</p>
+      <p>You retain ownership of the habits, goals, diary entries, activity posts, and other content you create in UpBee ("Your Content"). By using the App, you grant us a limited license to store, process, and display Your Content back to you, and — only where you explicitly choose to share it — to the friends or public audience you select. A public profile stays off until you turn it on. Following a public profile shows you wins that person marked public. It does not publish your private habits, diary, mood, or day plan.</p>
       <p>You are responsible for what you share. Captions, photos, videos, milestones, and other posts are yours to choose, and you are responsible for their content and for having the right to share them. UpBee does not review shared posts before they appear. Diary entries, mood, habits, and your day plan stay private unless you explicitly share a win.</p>
       <p>If a shared post is a scam, spam, harassment, or another problem, report it from the post (Report). We review those reports. You can also write to <a href="mailto:hello@upbee.app">hello@upbee.app</a>.</p>
       <p class="soft">We do not read, review, or use your diary or private content for any purpose other than providing the App's functionality to you.</p>
